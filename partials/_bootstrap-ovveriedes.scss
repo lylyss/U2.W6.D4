@@ -7,12 +7,75 @@
 
 // 2. Include any default variable overrides here
 
+// Gutter (spazio tra colonne) ridotto
+$grid-gutter-width: 0.5rem;
+
+// Bottoni con padding personalizzato
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 2.5rem;
+
+// Raggio dei bordi per elementi pillola
+$badge-border-radius: 10rem;
+$input-border-radius: 10rem;
+$btn-border-radius: 10rem;
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+
 @import "../bootstrap/scss/variables";
 @import "../bootstrap/scss/variables-dark";
 
 // 4. Include any default map overrides here
+// Estensione delle classi .fs-* da 1 a 10
 
+// Colori EPICODE e override dei colori Bootstrap
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "danger": #ff0077,
+    "info": #00ffea,
+    "light": #f3eeff,
+    "epicode-1": #5726c3,
+    "epicode-2": #8625a5,
+    "epicode-3": #cb2376,
+  )
+);
+
+// Stile card
+$card-bg: $dark;
+$card-color: $info;
+
+// Breakpoint aggiuntivi
+$grid-breakpoints: map-merge(
+  $grid-breakpoints,
+  (
+    3xl: 1600px,
+    4xl: 1800px,
+  )
+);
+
+$container-max-widths: map-merge(
+  $container-max-widths,
+  (
+    3xl: 1520px,
+    4xl: 1720px,
+  )
+);
+$font-sizes-custom: (
+  7: 0.875rem,
+  8: 0.75rem,
+  9: 0.625rem,
+  10: 0.5rem,
+);
+
+// Estensione delle classi .border-* da 1 a 10
+$border-widths-custom: (
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+);
+$font-sizes: map-merge($font-sizes, $font-sizes-custom);
+$border-widths: map-merge($border-widths, $border-widths-custom);
 // 5. Include remainder of required parts
 @import "../bootstrap/scss/maps";
 @import "../bootstrap/scss/mixins";
@@ -56,77 +119,3 @@
 @import "../bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
-// Estensione delle classi .fs-* da 1 a 10
-$font-sizes: (
-  1: 2.5rem,
-  2: 2rem,
-  3: 1.75rem,
-  4: 1.5rem,
-  5: 1.25rem,
-  6: 1rem,
-  7: 0.875rem,
-  8: 0.75rem,
-  9: 0.625rem,
-  10: 0.5rem,
-);
-
-// Estensione delle classi .border-* da 1 a 10
-$border-widths: (
-  1: 1px,
-  2: 2px,
-  3: 3px,
-  4: 4px,
-  5: 5px,
-  6: 6px,
-  7: 7px,
-  8: 8px,
-  9: 9px,
-  10: 10px,
-);
-
-// Gutter (spazio tra colonne) ridotto
-$grid-gutter-width: 0.5rem;
-
-// Bottoni con padding personalizzato
-$btn-padding-y: 0.75rem;
-$btn-padding-x: 2.5rem;
-
-// Raggio dei bordi per elementi pillola
-$badge-border-radius: 10rem;
-$input-border-radius: 10rem;
-$btn-border-radius: 10rem;
-
-// Colori EPICODE e override dei colori Bootstrap
-$theme-colors: map-merge(
-  $theme-colors,
-  (
-    "danger": #ff0077,
-    "info": #00ffea,
-    "light": #f3eeff,
-    "epicode-1": #5726c3,
-    "epicode-2": #8625a5,
-    "epicode-3": #cb2376,
-  )
-);
-
-// Stile card
-$card-bg: $dark;
-$card-color: $info;
-$card-border-radius: 2rem;
-
-// Breakpoint aggiuntivi
-$grid-breakpoints: map-merge(
-  $grid-breakpoints,
-  (
-    3xl: 1600px,
-    4xl: 1800px,
-  )
-);
-
-$container-max-widths: map-merge(
-  $container-max-widths,
-  (
-    3xl: 1520px,
-    4xl: 1720px,
-  )
-);
